@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ========== Primary Background Colors ========== */
+    --primary-background: #ffffff;
+    --primary-background-light: #ebebeb33;
+    --primary-background-overlay: #ffffff0a;
+    
+    /* ========== Secondary Background Colors ========== */
+    --secondary-background: #000000;
+    
+    /* ========== Text Colors ========== */
+    --text-primary: #000000;
+    --text-secondary: #ffffff;
+    --text-inverse: #ffffff;
+    
+    /* ========== Border Colors ========== */
+    --border-primary: #ffffff19;
+    --border-light: #ebebeb33;
+    
+    /* ========== Component Colors - Header ========== */
+    --header-text: #ffffff;
+    --header-item-bg: #ebebeb33;
+    
+    /* ========== Component Colors - Button ========== */
+    --button-text-primary: #000000;
+    --button-text-secondary: #ffffff;
+    --button-bg-primary: #ffffff;
+    --button-bg-secondary: #ffffff0a;
+    
+    /* ========== Typography Variables - Font Sizes ========== */
+    --font-size-2xs: 11px;
+    --font-size-xs: 14px;
+    --font-size-sm: 16px;
+    --font-size-base: 18px;
+    --font-size-md: 20px;
+    --font-size-lg: 28px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 50px;
+    --font-size-3xl: 60px;
+    --font-size-4xl: 80px;
+    
+    /* ========== Typography Variables - Font Weights ========== */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    
+    /* ========== Typography Variables - Line Heights ========== */
+    --line-height-2xs: 15px;
+    --line-height-xs: 19px;
+    --line-height-sm: 20px;
+    --line-height-base: 22px;
+    --line-height-md: 24px;
+    --line-height-lg: 30px;
+    --line-height-xl: 38px;
+    --line-height-2xl: 44px;
+    --line-height-3xl: 52px;
+    --line-height-4xl: 62px;
+    --line-height-5xl: 82px;
+    
+    /* ========== Typography Variables - Font Families ========== */
+    --font-family-primary: 'Satoshi', sans-serif;
+    --font-family-secondary: 'Epilogue', sans-serif;
+    
+    /* ========== Spacing Variables - Margin ========== */
+    --margin-3xs: 4px;
+    --margin-2xs: 12px;
+    --margin-xs: 24px;
+    --margin-sm: 40px;
+    --margin-md: 42px;
+    --margin-lg: 50px;
+    --margin-xl: 60px;
+    --margin-2xl: 106px;
+    --margin-3xl: 124px;
+    --margin-4xl: 132px;
+    --margin-5xl: 166px;
+    --margin-6xl: 184px;
+    --margin-7xl: 192px;
+    
+    /* ========== Spacing Variables - Padding ========== */
+    --padding-3xs: 6px;
+    --padding-2xs: 12px;
+    --padding-xs: 16px;
+    --padding-sm: 18px;
+    --padding-md: 26px;
+    --padding-lg: 30px;
+    --padding-xl: 34px;
+    --padding-2xl: 36px;
+    --padding-3xl: 40px;
+    --padding-4xl: 50px;
+    --padding-5xl: 56px;
+    --padding-6xl: 66px;
+    --padding-7xl: 90px;
+    --padding-8xl: 100px;
+    --padding-9xl: 104px;
+    --padding-10xl: 116px;
+    --padding-11xl: 258px;
+    
+    /* ========== Spacing Variables - Gap ========== */
+    --gap-3xs: 2px;
+    --gap-2xs: 8px;
+    --gap-xs: 12px;
+    --gap-sm: 14px;
+    --gap-md: 18px;
+    --gap-lg: 20px;
+    --gap-xl: 24px;
+    --gap-2xl: 26px;
+    --gap-3xl: 36px;
+    --gap-4xl: 50px;
+    --gap-5xl: 428px;
+    --gap-6xl: 534px;
+    
+    /* ========== Border Radius Variables ========== */
+    --radius-sm: 20px;
+    --radius-md: 24px;
+    --radius-full: 170px;
+    
+    /* ========== Border Width Variables ========== */
+    --border-width-thin: 1px;
+    
+    /* ========== Layout Variables - Width ========== */
+    --width-full: 100%;
+    --width-container: 1340px;
+    --width-logo: 152px;
+    --width-icon: 44px;
+    --width-card: 340px;
+    
+    /* ========== Layout Variables - Percentage Widths ========== */
+    --width-32: 32%;
+    --width-48: 48%;
+    --width-60: 60%;
+    --width-74: 74%;
+    --width-78: 78%;
+    --width-80: 80%;
+    --width-90: 90%;
+  }
+}
+
+@layer components {
+  /* Header Component Styles */
+  .header-container {
+    @apply flex items-center justify-between;
+  }
+  
+  /* Navigation Menu Styles */
+  .nav-menu {
+    @apply flex items-center gap-1;
+  }
+  
+  /* Button Component Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-[var(--radius-md)] 
+           px-[var(--padding-3xl)] py-[var(--padding-xs)] 
+           font-[var(--font-weight-medium)] transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-[var(--radius-md)] 
+           px-[var(--padding-2xs)] py-[var(--padding-2xs)] 
+           font-[var(--font-weight-medium)] transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  /* Custom Utility Classes */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .container-custom {
+    max-width: var(--width-container);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--padding-xs);
+    padding-right: var(--padding-xs);
+  }
+}

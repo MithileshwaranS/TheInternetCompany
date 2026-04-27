@@ -1,0 +1,134 @@
+@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Satoshi:wght@400;500;600;700&display=swap');
+/* Import Tailwind CSS */
+
+/* Import Google Fonts */
+
+/* Global Base Styles */
+body {
+  font-family:
+    'Satoshi',
+    'Epilogue',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Button Reset */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Image Optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Glassmorphism Surface */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition:
+    background 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms ease;
+}
+
+/* Moving highlight creates the liquid shimmer on interaction. */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: -140% -35%;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 34%,
+    rgba(255, 255, 255, 0.32) 50%,
+    rgba(255, 255, 255, 0) 66%
+  );
+  transform: translateX(-45%) rotate(8deg);
+  opacity: 0;
+  transition:
+    transform 650ms ease,
+    opacity 450ms ease;
+}
+
+.glass-card:hover,
+.glass-card:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.glass-card:hover::before,
+.glass-card:focus-visible::before {
+  transform: translateX(45%) rotate(8deg);
+  opacity: 1;
+}
+
+.glass-card--active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .glass-card::before {
+    transition: none;
+  }
+}
